@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English to Kannada Translator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌍 English to Kannada Translator</h1>
+            <p>Translate text and listen to pronunciation</p>
+        </div>
+
+        <div class="translator-box">
+            <div class="input-section">
+                <div class="language-header">
+                    <h3>English</h3>
+                    <span class="flag">🇬🇧</span>
+                </div>
+                <textarea 
+                    id="englishText" 
+                    placeholder="Enter English text here..." 
+                    rows="6"
+                ></textarea>
+                <button id="speakEnglish" class="speak-btn">
+                    🔊 Speak English
+                </button>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="output-section">
+                <div class="language-header">
+                    <h3>ಕನ್ನಡ (Kannada)</h3>
+                    <span class="flag">🇮🇳</span>
+                </div>
+                <textarea 
+                    id="kannadaText" 
+                    placeholder="Kannada translation will appear here..." 
+                    rows="6"
+                    readonly
+                ></textarea>
+                <button id="speakKannada" class="speak-btn">
+                    🔊 Speak Kannada
+                </button>
+            </div>
+        </div>
+
+        <button id="translateBtn" class="translate-btn">
+            🔄 Translate
+        </button>
+
+        <div id="message" class="message"></div>
+
+        <div class="features">
+            <h4>Features:</h4>
+            <ul>
+                <li>✅ Real-time translation</li>
+                <li>✅ Text-to-speech for both languages</li>
+                <li>✅ Copy translated text</li>
+                <li>✅ Clean and user-friendly interface</li>
+            </ul>
+        </div>
+
+        <audio id="audioPlayer"></audio>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
